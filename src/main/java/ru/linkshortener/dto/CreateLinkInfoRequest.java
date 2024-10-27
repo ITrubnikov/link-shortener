@@ -9,8 +9,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CreateLinkInfoRequest {
-    String link;
-    LocalDateTime endTime;
-    String description;
-    Boolean active;
+    private String link;
+    private LocalDateTime endTime;
+    private String description;
+    private Boolean active;
 }

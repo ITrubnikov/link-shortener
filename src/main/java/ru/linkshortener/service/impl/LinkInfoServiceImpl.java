@@ -16,9 +16,10 @@ import java.util.Map;
 public class LinkInfoServiceImpl implements LinkInfoService {
 
     final Map<String, CreateLinkInfoRequest> resultMap = new HashMap<>();
+
     @Override
     public String createShortLink(CreateLinkInfoRequest createLinkInfoRequest) {
-        String shortLink =  RandomStringUtils.randomAlphanumeric(10);
+        String shortLink = RandomStringUtils.randomAlphanumeric(10);
         resultMap.put(shortLink, createLinkInfoRequest);
         log.info("in metod sl: " + shortLink);
         return shortLink;

@@ -6,7 +6,7 @@ import ru.linkshortener.dto.CreateLinkInfoRequest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@Slf4j
+//@Slf4j
 class LinkInfoServiceImplTest {
 
     @Test
@@ -21,7 +21,7 @@ class LinkInfoServiceImplTest {
 
         String shortLink = service.createShortLink(request);
         System.out.println("gen short link: " + shortLink);
-//        log.info("gen short link: " + shortLink); // todo вопрос, а почему Slf4j не работает в тестах?
+//        log.info("gen short link: " + shortLink); 
         assertNotNull(shortLink);
         assertEquals(10, shortLink.length());
     }
