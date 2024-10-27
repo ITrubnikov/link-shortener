@@ -8,13 +8,15 @@ group = 'ru.linkshortener'
 version = '0.0.1-SNAPSHOT'
 
 
-
 repositories {
     mavenCentral()
 }
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
