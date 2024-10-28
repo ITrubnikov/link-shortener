@@ -1,7 +1,8 @@
 package ru.linkshortener.service;
 
 import ru.linkshortener.dto.CreateLinkInfoRequest;
+import ru.linkshortener.dto.LinkInfoResponse;
 
 public interface LinkInfoService {
-    String createShortLink(CreateLinkInfoRequest createLinkInfoRequest);
+    LinkInfoResponse getByShortLink (String shortLink);
 }
