@@ -1,6 +1,5 @@
 package ru.linkshortener.service.impl;
 
-import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ru.linkshortener.dto.CreateLinkInfoRequest;
@@ -11,8 +10,6 @@ import ru.linkshortener.service.LinkInfoService;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 //@Slf4j
 class LinkInfoServiceImplTest {
@@ -29,7 +26,6 @@ class LinkInfoServiceImplTest {
         LinkInfoResponse linkInfoResponse = linkInfoService.createLinkInfo(request);
         Assertions.assertEquals(linkInfoResponse, linkInfoService.getByShortLink(linkInfoResponse.getShortLink()));
     }
-
 
     @Test
     void findByFilterTest() {

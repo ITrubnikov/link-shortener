@@ -1,6 +1,5 @@
 package ru.linkshortener.service.impl;
 
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.stereotype.Service;
@@ -12,9 +11,7 @@ import ru.linkshortener.repository.LinkInfoRepository;
 import ru.linkshortener.service.LinkInfoService;
 import ru.linkshortener.util.Constant;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -30,7 +27,6 @@ public class LinkInfoServiceImpl implements LinkInfoService {
     @Override
     public LinkInfoResponse getByShortLink(String shortLink) {
         return linkInfoRepository.findByShortLink(shortLink).map(this::toResponse).orElseThrow(() -> new NotFoundExeption("Не найден репозиторий для ссылки: " + shortLink));
-
     }
 
     @Override
@@ -50,7 +46,9 @@ public class LinkInfoServiceImpl implements LinkInfoService {
 
     @Override
     public List<LinkInfoResponse> findByFilter() {
-        return linkInfoRepository.findAll().stream().map(this::toResponse).collect(Collectors.toList());
+        return linkInfoRepository.findAll().stream()
+                .map(this::toResponse)
+                .collect(Collectors.toList());
     }
 
     private LinkInfoResponse toResponse(LinkInfo linkInfo) {
@@ -64,6 +62,5 @@ public class LinkInfoServiceImpl implements LinkInfoService {
                 .active(linkInfo.getActive())
                 .build();
     }
-
 }
 
