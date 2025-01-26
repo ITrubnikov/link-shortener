@@ -1,11 +1,13 @@
 package ru.linkshortener.repository.impl;
 
+import org.springframework.stereotype.Repository;
 import ru.linkshortener.model.LinkInfo;
 import ru.linkshortener.repository.LinkInfoRepository;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
+@Repository
 public class LinkInfoRepositoryImpl implements LinkInfoRepository {
 
     final Map<String, LinkInfo> resultMap = new ConcurrentHashMap<>();
